@@ -14,6 +14,7 @@ def get_dates():
     coming_monday = today + datetime.timedelta(days=-today.weekday())
     return last_monday, coming_monday
 
+#add header to CSV file
 def write_csv_header(filename):
     with open(filename, 'w', newline='') as outcsv:
         writer = csv.writer(outcsv)
@@ -31,7 +32,7 @@ def last_weeks_leaderborad(driver):
     text_out = driver.find_element_by_xpath('//*[@class="dense striped sortable"]')
     return text_out
 
-
+#append last weeks data to csv file
 def write_last_weeks_leaderboard(filename, division, driver):
     text_out = last_weeks_leaderborad(driver)
     with open(filename, 'a', newline='') as csvfile:
@@ -42,7 +43,7 @@ def write_last_weeks_leaderboard(filename, division, driver):
             if len(row_content) > 1: #don't pull through empty header row
                 wr.writerow(row_content)
 
-
+#append this weeks data to csv file
 def write_this_weeks_leaderboard(filename, division, driver):
     text_out = this_weeks_leaderborad(driver)
     with open(filename, 'a', newline='') as csvfile:
@@ -53,6 +54,7 @@ def write_this_weeks_leaderboard(filename, division, driver):
             if len(row_content) > 1:  # don't pull through empty header row
                 wr.writerow(row_content)
 
+#call functions to append to csv by division and url
 def write_csv_by_div(filename_last, filename_this, division, url):
     driver = new_driver(url)
     write_last_weeks_leaderboard(filename_last, division, driver)
