@@ -1,6 +1,6 @@
 from functions import *
 
-#declare filenames
+#declare filenames with this weeks and last weeks date
 last_monday, this_monday = get_dates()
 filename_this = "Leaderboard_" + str(this_monday) + ".csv"
 filename_last = "Leaderboard_" + str(last_monday) + ".csv"
@@ -25,7 +25,7 @@ write_csv_by_div(filename_last,
 
 
 
-
+### END ###
 
 
 
