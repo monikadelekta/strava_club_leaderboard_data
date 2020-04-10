@@ -98,6 +98,7 @@ def write_csv_by_div(filename_last, filename_this, division, url):
     :return: null, this function only calls other functions
     """
     driver = new_driver(url)
+    
     write_this_weeks_leaderboard(filename_this, division, driver)
     write_last_weeks_leaderboard(filename_last, division, driver)
 
