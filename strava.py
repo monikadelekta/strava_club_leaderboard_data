@@ -10,18 +10,15 @@ write_csv_header(filename_last)
 #append all divisions data
 write_csv_by_div(filename_last,
                  filename_this,
-                 "London Market",
-                 "https://www.strava.com/clubs/hiscox-lm-virtual-running-club-598946")
+                 "London Market", URL)
 
 write_csv_by_div(filename_last,
                  filename_this,
-                 "Reinsurance",
-                 "https://www.strava.com/clubs/runners-of-hiscoxre-598340")
+                 "Reinsurance", URL)
 
 write_csv_by_div(filename_last,
                  filename_this,
-                 "UK",
-                 "https://www.strava.com/clubs/hiscox-u-k-virtual-wfh-running-club-598151")
+                 "UK", URL)
 
 
 
